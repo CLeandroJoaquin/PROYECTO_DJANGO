@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+{% block contenido %}
+{% block titulo %} 
+Lista de Estudiantes
+{% endblock titulo %}
+
+<h1>
+ Bienvenido, les saluda Pedro 
+</h1>
+        
+<h3> Alumnos inscritos</h3>
+<ul>
+{% for estudiante in estudiantes %}
+    <li>
+     {{ estudiante.apellido}}, {{estudiante.nombre}}
+     {% if estudiante.nota >= 6 %}
+        APROBADO, {{estudiante.nota}}
+                  
+     {% else %}
+        REPROBADO
+     {% endif %}
+
+    </li>       
+{% endfor %}
+</ul>
+{% endblock contenido %}
+  
